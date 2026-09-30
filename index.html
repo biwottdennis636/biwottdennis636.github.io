@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dennis Biwott | Sustainability and Renewable Energy</title>
+  <meta name="description" content="Dennis Biwott is a graduate student in Sustainability and Renewable Energy at Eastern Illinois University with a background in Industrial Chemistry.">
+  <style>
+    :root {
+      --bg: #f5f7f6;
+      --surface: #ffffff;
+      --ink: #14232b;
+      --muted: #55666c;
+      --line: #d5dfdc;
+      --accent: #0d6b5e;
+      --accent-soft: #e2efeb;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    header.site {
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    header.site .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.5rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.975rem;
+    }
+
+    nav a:hover { color: var(--accent); text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 7vw, 4.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+    }
+
+    .hero .role {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin: 0 0 2rem;
+      max-width: 34rem;
+    }
+
+    .hero .focus {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+      line-height: 1.35;
+      max-width: 36rem;
+      margin: 0;
+      padding-left: 1.25rem;
+      border-left: 5px solid var(--accent);
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      gap: 1rem 2.5rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .section-body > :first-child { margin-top: 0; }
+    .section-body > :last-child { margin-bottom: 0; }
+
+    p { margin: 0 0 1rem; max-width: 40rem; }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 1.3;
+      margin: 0 0 0.15rem;
+    }
+
+    .where {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+    }
+
+    .entry + .entry { margin-top: 2rem; }
+
+    ul.plain {
+      margin: 0;
+      padding-left: 1.2rem;
+      max-width: 40rem;
+    }
+
+    ul.plain li { margin-bottom: 0.4rem; }
+    ul.plain li::marker { color: var(--accent); }
+
+    .subhead {
+      font-weight: 600;
+      margin: 1.75rem 0 0.6rem;
+    }
+
+    /* Tag lists */
+    .tags {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tags li {
+      background: var(--accent-soft);
+      color: var(--ink);
+      border-radius: 4px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.975rem;
+    }
+
+    .skill-group + .skill-group { margin-top: 1.5rem; }
+
+    .skill-group h3 {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.6rem;
+    }
+
+    /* Contact */
+    dl.contact {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 6rem 1fr;
+      gap: 0.6rem 1rem;
+    }
+
+    dl.contact dt { color: var(--muted); }
+    dl.contact dd { margin: 0; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.925rem;
+    }
+
+    footer p { margin: 0; max-width: none; }
+
+    /* Small screens */
+    @media (max-width: 680px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      section { padding: 2.25rem 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+      dl.contact { grid-template-columns: 5rem 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="#top">Dennis Biwott</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+
+      <div class="hero">
+        <h1>Dennis Biwott</h1>
+        <p class="role">Graduate student in Sustainability and Renewable Energy at Eastern Illinois University, with a background in Industrial Chemistry.</p>
+        <p class="focus">Interested in batteries that last longer, cost less, and do less harm to the environment.</p>
+      </div>
+
+      <section id="about">
+        <div class="section-grid">
+          <h2>About Me</h2>
+          <div class="section-body">
+            <p>I am a graduate student with a strong academic background in Industrial Chemistry and current studies in Sustainability and Renewable Energy. I have worked in academic and laboratory environments, and I bring research, communication, teamwork, and problem-solving skills to my work.</p>
+            <p>I am looking to apply my chemistry and sustainability knowledge to research, environmental, laboratory, and renewable-energy opportunities.</p>
+
+            <p class="subhead">Research interests</p>
+            <ul class="tags">
+              <li>Battery technology and energy storage</li>
+              <li>Sustainable battery materials</li>
+              <li>Battery lifespan, cost, and environmental impact</li>
+              <li>Renewable energy</li>
+              <li>Environmental sustainability</li>
+              <li>Industrial chemistry</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-grid">
+          <h2>Education</h2>
+          <div class="section-body">
+            <div class="entry">
+              <h3>M.S. Sustainability and Renewable Energy</h3>
+              <p class="where">Eastern Illinois University, Charleston, Illinois. 2026 to present.</p>
+              <ul class="plain">
+                <li>Graduate coursework focused on sustainability, renewable energy, research, and technology.</li>
+                <li>Research interests include battery technology, energy storage, battery lifespan, cost, and environmental sustainability.</li>
+              </ul>
+            </div>
+            <div class="entry">
+              <h3>B.S. Industrial Chemistry</h3>
+              <p class="where">Kisii University, Kisii, Kenya. 2018 to 2023.</p>
+              <ul class="plain">
+                <li>Completed coursework and laboratory training in chemistry and industrial chemical processes.</li>
+                <li>Developed skills in laboratory procedures, chemical analysis, data interpretation, and scientific research.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-grid">
+          <h2>Experience</h2>
+          <div class="section-body">
+            <div class="entry">
+              <h3>Graduate Assistant, Department of Chemistry</h3>
+              <p class="where">Eastern Illinois University, Charleston, Illinois. August 2025 to December 2025.</p>
+              <ul class="plain">
+                <li>Assisted with departmental and academic activities within the Chemistry Department.</li>
+                <li>Supported students and faculty in an academic environment.</li>
+                <li>Applied chemistry knowledge and laboratory skills while completing graduate-level coursework.</li>
+                <li>Maintained professional communication and collaborated effectively with faculty and students.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-grid">
+          <h2>Skills</h2>
+          <div class="section-body">
+            <div class="skill-group">
+              <h3>Laboratory</h3>
+              <ul class="tags">
+                <li>Laboratory procedures and safety</li>
+                <li>Chemical analysis</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Research</h3>
+              <ul class="tags">
+                <li>Scientific research</li>
+                <li>Data collection and interpretation</li>
+                <li>Academic research and literature review</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Software</h3>
+              <ul class="tags">
+                <li>Microsoft Word</li>
+                <li>Microsoft Excel</li>
+                <li>Microsoft PowerPoint</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Professional</h3>
+              <ul class="tags">
+                <li>Communication and teamwork</li>
+                <li>Problem solving</li>
+                <li>Time management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-grid">
+          <h2>Contact</h2>
+          <div class="section-body">
+            <p>I am open to research, laboratory, and renewable-energy opportunities. The best way to reach me is by email.</p>
+            <dl class="contact">
+              <dt>Email</dt>
+              <dd><a href="mailto:biwottdennis2@gmail.com">biwottdennis2@gmail.com</a></dd>
+              <dt>Phone</dt>
+              <dd><a href="tel:+13092378941">309-237-8941</a></dd>
+              <dt>Location</dt>
+              <dd>Charleston, Illinois</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 Dennis Biwott</p>
+    </div>
+  </footer>
+
+</body>
+</html>
